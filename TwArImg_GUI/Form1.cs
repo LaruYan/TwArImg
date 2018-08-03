@@ -580,7 +580,7 @@ namespace TwArImg_GUI
             }
             else
             {
-                // 로그아웃 필요 하는 동안 모달 대화상자를 생성하자
+                // 로그아웃 필요
                 logout();
             }
         }
@@ -588,6 +588,7 @@ namespace TwArImg_GUI
         private void logout()
         {
             //로그아웃
+            m_dler.invalidateWebToken();
         }
     }
 }

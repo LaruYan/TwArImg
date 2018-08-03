@@ -346,13 +346,13 @@
     <value>67, 221</value>
   </data>
   <data name="lbl_Option_Login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>690, 50</value>
+    <value>960, 50</value>
   </data>
   <data name="lbl_Option_Login.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lbl_Option_Login.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR]프로텍트 계정의 미디어를 다운로드하기 위해 로그인이 필요합니다.
+    <value>[HARDCODEDSTR]아카이브 자신 또는 트윗 작성자가 프로텍트 계정인 경우 미디어를 다운로드하려면 로그인이 필요합니다.
 체크박스를 클릭하시면 로그인 창이 열리며 체크박스를 해제하는 경우 로그아웃 처리됩니다.</value>
   </data>
   <data name="&gt;&gt;lbl_Option_Login.Name" xml:space="preserve">
@@ -374,13 +374,13 @@
     <value>33, 185</value>
   </data>
   <data name="ckb_Option_Login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 29</value>
+    <value>458, 29</value>
   </data>
   <data name="ckb_Option_Login.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="ckb_Option_Login.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 프로텍트 계정 미디어 다운로드</value>
+    <value>[HARDCODEDSTR]프로텍트 계정 미디어 다운로드</value>
   </data>
   <data name="&gt;&gt;ckb_Option_Login.Name" xml:space="preserve">
     <value>ckb_Option_Login</value>
@@ -1291,15 +1291,6 @@
   <data name="&gt;&gt;lnkLbl_Twitter.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="sfd_Log.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 17</value>
-  </metadata>
-  <data name="sfd_Log.Filter" xml:space="preserve">
-    <value>평문 텍스트 로그 파일 (*.log)|*.log|모든 파일 (*.*)|*.*</value>
-  </data>
-  <metadata name="timer_LogRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>349, 17</value>
-  </metadata>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1330,6 +1321,15 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="sfd_Log.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>256, 17</value>
+  </metadata>
+  <data name="sfd_Log.Filter" xml:space="preserve">
+    <value>평문 텍스트 로그 파일 (*.log)|*.log|모든 파일 (*.*)|*.*</value>
+  </data>
+  <metadata name="timer_LogRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>349, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -7510,9 +7510,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>

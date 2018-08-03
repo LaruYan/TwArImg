@@ -83,14 +83,23 @@ namespace TwArImg_GUI
                 strTwitterSess = null;
                 strAuthToken = null;
             }
-            if(strAuthToken == null || strTwitterSess == null)
+            if (strAuthToken == null || strTwitterSess == null)
             {
-                // 쿠키 따오는데 실패
+                // 쿠키 가져오는데 실패
                 Downloader.getInstance().ConsoleLog(Downloader.LOG_TAG_WARNING, "cannot parse Twitter Session cookie. ");
                 MessageBox.Show("[HARDCODEDSTR]쿠키를 가져오는데 실패하였습니다.");
             }
-            MessageBox.Show(strCookie);
-            MessageBox.Show("AT = " + strAuthToken + "\r\n" + "TS = " + strTwitterSess);
+            else
+            {
+                // 토큰을 가져왔습니다.
+                // 다운로더에 설정하고 창을 닫습니다.
+                Downloader.getInstance().setWebToken(strTwitterSess, strAuthToken);
+                Downloader.getInstance().ConsoleLog(Downloader.LOG_TAG_INFO, "Got Twitter Session cookie. ");
+                MessageBox.Show("[HARDCODEDSTR]쿠키를 가져오는데 성공했습니다." + "\r\n" + "이제 프로텍트 계정의 미디어도 가져올 수 있습니다.");
+                this.Close();
+            }
+            //MessageBox.Show(strCookie);
+            //MessageBox.Show("AT = " + strAuthToken + "\r\n" + "TS = " + strTwitterSess);
         }
     }
 }

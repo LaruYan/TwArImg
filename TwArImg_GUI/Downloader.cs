@@ -32,24 +32,24 @@ namespace TwArImg_GUI
 
         // json 속성 이름
 
-        const string PROPERTY_TWEET_ID = "id";
-        const string PROPERTY_TWEET_TEXT = "text";
-        const string PROPERTY_TWEET_RETWEETED_STATUS = "retweeted_status";
+        private const string PROPERTY_TWEET_ID = "id";
+        private const string PROPERTY_TWEET_TEXT = "text";
+        private const string PROPERTY_TWEET_RETWEETED_STATUS = "retweeted_status";
 
-        const string PROPERTY_ENTITIES = "entities";
-        const string PROPERTY_ENTITIES_MEDIA = "media";
-        const string PROPERTY_ENTITIES_EXPANDED_URL = "expanded_url";
-        const string PROPERTY_ENTITITIES_MEDIA_URL = "media_url";
-        const string PROPERTY_ENTITITIES_MEDIA_URL_HTTPS = "media_url_https";
+        private const string PROPERTY_ENTITIES = "entities";
+        private const string PROPERTY_ENTITIES_MEDIA = "media";
+        private const string PROPERTY_ENTITIES_EXPANDED_URL = "expanded_url";
+        private const string PROPERTY_ENTITITIES_MEDIA_URL = "media_url";
+        private const string PROPERTY_ENTITITIES_MEDIA_URL_HTTPS = "media_url_https";
 
-        const string PROPERTY_USER = "user";
-        const string PROPERTY_USER_ID = "id";
-        const string PROPERTY_USER_SCREEN_NAME = "screen_name";
-        const string PROPERTY_USER_PROFILE_IMAGE_URL_HTTPS = "profile_image_url_https";
+        private const string PROPERTY_USER = "user";
+        private const string PROPERTY_USER_ID = "id";
+        private const string PROPERTY_USER_SCREEN_NAME = "screen_name";
+        private const string PROPERTY_USER_PROFILE_IMAGE_URL_HTTPS = "profile_image_url_https";
 
         // json 속성 이름
 
-        const string PROPERTY_VIDEO_URL = "video_url";
+        private const string PROPERTY_VIDEO_URL = "video_url";
 
 
 
@@ -77,15 +77,26 @@ namespace TwArImg_GUI
 
         // 파일 디렉토리 및 파일 관련
 
-        const string DIRECTORY_DATA_TWEETS = @"data/js/tweets";
-        const string FILE_EXT_MP4 = ".mp4";
-        const string FILE_EXT_M3U8 = ".m3u8";
+        private const string DIRECTORY_DATA_TWEETS = @"data/js/tweets";
+        private const string FILE_EXT_MP4 = ".mp4";
+        private const string FILE_EXT_M3U8 = ".m3u8";
 
-        const string THIS_IS_PROFILE_IMG = "IsProfileImg";
-        const string UNKNOWN_SCREEN_NAME = "[UNKNOWN]";
+        private const string THIS_IS_PROFILE_IMG = "IsProfileImg";
+        private const string UNKNOWN_SCREEN_NAME = "[UNKNOWN]";
 
-        const string STR_KEYWORD_STATUS_SPEICIFER = "/status/";
-        const string STR_KEYWORD_VIDEO_SPECIFIER = @"_video\/";
+        private const string STR_KEYWORD_STATUS_SPEICIFER = "/status/";
+        private const string STR_KEYWORD_VIDEO_SPECIFIER = @"_video\/";
+
+
+
+        // 트위터 웹 쿠키 관련
+
+        public const string COOKIE_KEY_TWITTER_SESS = "_twitter_sess=";
+        public const string COOKIE_KEY_AUTH_TOKEN = "auth_token=";
+
+        private string twitterSessionCookie = null;
+        private string authTokenCookie = null;
+
 
 
 
@@ -1167,16 +1178,19 @@ namespace TwArImg_GUI
             return "";
         }
 
-        public const string COOKIE_KEY_TWITTER_SESS = "_twitter_sess=";
-        public const string COOKIE_KEY_AUTH_TOKEN = "auth_token=";
 
         private void setCookieForWebDownloader(WebClient webClient)
         {
             /////////////////////////////////////////////////////////
             // 프로텍트 계정의 동영상에 액세스하려면 쿠키가 필요합니다.
             // 그 쿠키를 설정합니다. (아래는 임시 값으로, 쿠키 취득과정 구현 필요)
-            string twitterSessionCookie = "YOUR_TWITTER_SESSION_COOKIE_HERE";
-            string authTokenCookie = "YOUR_AUTH_TOKEN_COOKIE_HERE";
+            
+            if(twitterSessionCookie == null || authTokenCookie == null)
+            {
+                // 둘 중 하나라도 없으면 진행불가.
+                // 쿠키 추가를 하지 않습니다.
+                return;
+            }
             // 쿠키를 헤더에 추가합니다.
             webClient.Headers.Add(HttpRequestHeader.Cookie, COOKIE_KEY_TWITTER_SESS + twitterSessionCookie
                 +";"
@@ -1185,5 +1199,38 @@ namespace TwArImg_GUI
             //webClient.Headers.Add(HttpRequestHeader.Cookie, "kdt=" + "YOUR_KDT_COOKIE_HERE");
         }
 
+        public void setWebToken(string twitterSess, string authToken)
+        {
+            // 웹 토큰을 설정합니다.
+            twitterSessionCookie = twitterSess;
+            authTokenCookie = authToken;
+        }
+
+        public bool isWebTokenValid()
+        {
+            // 트위터 웹 토큰이 유효한지 확인합니다.
+            // null 만 아니면 일단 될 듯
+
+            return twitterSessionCookie != null && authTokenCookie != null;
+        }
+
+        
+        public void invalidateWebToken()
+        {
+            twitterSessionCookie = null;
+            authTokenCookie = null;
+
+            // TODO twitter.com/logout 으로 접속이 로그아웃으로 이어지지 않고
+            // 로그아웃을 방해하는 페이지가 있다. 나중에 하자.
+            return;
+
+            string logoutPage = null;
+            using (WebClient logoutWebClient = new WebClient())
+            {
+                setCookieForWebDownloader(logoutWebClient);
+
+                logoutPage = logoutWebClient.DownloadString("https://twitter.com/logout");
+            }
+        }
     }
 }
