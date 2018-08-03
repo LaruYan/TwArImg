@@ -10,7 +10,7 @@ namespace TwArImg_GUI
 {
     public partial class MainForm : Form
     {
-        public const string VERSION_STRING = "v0.8b-unreleased";
+        public const string VERSION_STRING = "v0.9-unreleased";
         ///////////////////////////////////////////////////////////////////////
         // UI
 
@@ -567,6 +567,27 @@ namespace TwArImg_GUI
         {
             ckb_Option_ExcludeRetweets.Enabled = !isLocked;
             lbl_Option_ExcludeRetweets.Enabled = !isLocked;
+            ckb_Option_Login.Enabled = !isLocked;
+            lbl_Option_Login.Enabled = !isLocked;
+        }
+
+        private void ckb_Option_Login_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_Option_Login.Checked)
+            {
+                TwitterWeb twtWeb = new TwitterWeb();
+                twtWeb.Show();
+            }
+            else
+            {
+                // 로그아웃 필요 하는 동안 모달 대화상자를 생성하자
+                logout();
+            }
+        }
+
+        private void logout()
+        {
+            //로그아웃
         }
     }
 }

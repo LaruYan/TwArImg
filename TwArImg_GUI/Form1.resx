@@ -195,6 +195,476 @@
   <data name="tabCtrl_Status.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="&gt;&gt;lbl_FailedTweetGuide.Name" xml:space="preserve">
+    <value>lbl_FailedTweetGuide</value>
+  </data>
+  <data name="&gt;&gt;lbl_FailedTweetGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_FailedTweetGuide.Parent" xml:space="preserve">
+    <value>tabPage_FailedTweets</value>
+  </data>
+  <data name="&gt;&gt;lbl_FailedTweetGuide.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;list_FailedTweets.Name" xml:space="preserve">
+    <value>list_FailedTweets</value>
+  </data>
+  <data name="&gt;&gt;list_FailedTweets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;list_FailedTweets.Parent" xml:space="preserve">
+    <value>tabPage_FailedTweets</value>
+  </data>
+  <data name="&gt;&gt;list_FailedTweets.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPage_FailedTweets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 39</value>
+  </data>
+  <data name="tabPage_FailedTweets.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tabPage_FailedTweets.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tabPage_FailedTweets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1134, 355</value>
+  </data>
+  <data name="tabPage_FailedTweets.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage_FailedTweets.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 실패한 트윗</value>
+  </data>
+  <data name="&gt;&gt;tabPage_FailedTweets.Name" xml:space="preserve">
+    <value>tabPage_FailedTweets</value>
+  </data>
+  <data name="&gt;&gt;tabPage_FailedTweets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_FailedTweets.Parent" xml:space="preserve">
+    <value>tabCtrl_Status</value>
+  </data>
+  <data name="&gt;&gt;tabPage_FailedTweets.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbl_LogNotAvailable.Name" xml:space="preserve">
+    <value>lbl_LogNotAvailable</value>
+  </data>
+  <data name="&gt;&gt;lbl_LogNotAvailable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_LogNotAvailable.Parent" xml:space="preserve">
+    <value>tabPage_Log</value>
+  </data>
+  <data name="&gt;&gt;lbl_LogNotAvailable.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtbx_Log.Name" xml:space="preserve">
+    <value>txtbx_Log</value>
+  </data>
+  <data name="&gt;&gt;txtbx_Log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbx_Log.Parent" xml:space="preserve">
+    <value>tabPage_Log</value>
+  </data>
+  <data name="&gt;&gt;txtbx_Log.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;list_Log.Name" xml:space="preserve">
+    <value>list_Log</value>
+  </data>
+  <data name="&gt;&gt;list_Log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;list_Log.Parent" xml:space="preserve">
+    <value>tabPage_Log</value>
+  </data>
+  <data name="&gt;&gt;list_Log.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ckb_LogAutoScroll.Name" xml:space="preserve">
+    <value>ckb_LogAutoScroll</value>
+  </data>
+  <data name="&gt;&gt;ckb_LogAutoScroll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ckb_LogAutoScroll.Parent" xml:space="preserve">
+    <value>tabPage_Log</value>
+  </data>
+  <data name="&gt;&gt;ckb_LogAutoScroll.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btn_LogSave.Name" xml:space="preserve">
+    <value>btn_LogSave</value>
+  </data>
+  <data name="&gt;&gt;btn_LogSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_LogSave.Parent" xml:space="preserve">
+    <value>tabPage_Log</value>
+  </data>
+  <data name="&gt;&gt;btn_LogSave.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage_Log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 39</value>
+  </data>
+  <data name="tabPage_Log.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tabPage_Log.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tabPage_Log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1134, 355</value>
+  </data>
+  <data name="tabPage_Log.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage_Log.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 로그</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Log.Name" xml:space="preserve">
+    <value>tabPage_Log</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Log.Parent" xml:space="preserve">
+    <value>tabCtrl_Status</value>
+  </data>
+  <data name="&gt;&gt;tabPage_Log.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbl_Option_Login.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Option_Login.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 221</value>
+  </data>
+  <data name="lbl_Option_Login.Size" type="System.Drawing.Size, System.Drawing">
+    <value>690, 50</value>
+  </data>
+  <data name="lbl_Option_Login.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbl_Option_Login.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR]프로텍트 계정의 미디어를 다운로드하기 위해 로그인이 필요합니다.
+체크박스를 클릭하시면 로그인 창이 열리며 체크박스를 해제하는 경우 로그아웃 처리됩니다.</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Login.Name" xml:space="preserve">
+    <value>lbl_Option_Login</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Login.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Login.Parent" xml:space="preserve">
+    <value>tabPage_option</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Login.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ckb_Option_Login.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ckb_Option_Login.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 185</value>
+  </data>
+  <data name="ckb_Option_Login.Size" type="System.Drawing.Size, System.Drawing">
+    <value>464, 29</value>
+  </data>
+  <data name="ckb_Option_Login.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ckb_Option_Login.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 프로텍트 계정 미디어 다운로드</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_Login.Name" xml:space="preserve">
+    <value>ckb_Option_Login</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_Login.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_Login.Parent" xml:space="preserve">
+    <value>tabPage_option</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_Login.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbl_Option_Description.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Option_Description.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_Option_Description.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 32</value>
+  </data>
+  <data name="lbl_Option_Description.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 25</value>
+  </data>
+  <data name="lbl_Option_Description.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbl_Option_Description.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 아래의 옵션은 다운로드중엔 바꿀 수 없다</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Description.Name" xml:space="preserve">
+    <value>lbl_Option_Description</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Description.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Description.Parent" xml:space="preserve">
+    <value>tabPage_option</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_Description.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_Option_ExcludeRetweets.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_Option_ExcludeRetweets.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_Option_ExcludeRetweets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 112</value>
+  </data>
+  <data name="lbl_Option_ExcludeRetweets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 50</value>
+  </data>
+  <data name="lbl_Option_ExcludeRetweets.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbl_Option_ExcludeRetweets.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 리트윗한 트윗의 프사와 미디어를 다운로드 하지 않습니다. 나중에 계정이 프로텍트 상태가
+되거나 트윗이 삭제되어 버렸을 때 같은 아카이브를 쓰더라도 더 이상 다운로드하지 못할 수 있습니다.</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.Name" xml:space="preserve">
+    <value>lbl_Option_ExcludeRetweets</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.Parent" xml:space="preserve">
+    <value>tabPage_option</value>
+  </data>
+  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ckb_Option_ExcludeRetweets.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ckb_Option_ExcludeRetweets.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ckb_Option_ExcludeRetweets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 80</value>
+  </data>
+  <data name="ckb_Option_ExcludeRetweets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 29</value>
+  </data>
+  <data name="ckb_Option_ExcludeRetweets.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ckb_Option_ExcludeRetweets.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 리트위 제외</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.Name" xml:space="preserve">
+    <value>ckb_Option_ExcludeRetweets</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.Parent" xml:space="preserve">
+    <value>tabPage_option</value>
+  </data>
+  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage_option.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 39</value>
+  </data>
+  <data name="tabPage_option.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage_option.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1134, 355</value>
+  </data>
+  <data name="tabPage_option.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPage_option.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 옵션</value>
+  </data>
+  <data name="&gt;&gt;tabPage_option.Name" xml:space="preserve">
+    <value>tabPage_option</value>
+  </data>
+  <data name="&gt;&gt;tabPage_option.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_option.Parent" xml:space="preserve">
+    <value>tabCtrl_Status</value>
+  </data>
+  <data name="&gt;&gt;tabPage_option.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Github.Name" xml:space="preserve">
+    <value>lnkLbl_Github</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Github.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Github.Parent" xml:space="preserve">
+    <value>tabPage_about</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Github.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutVersion.Name" xml:space="preserve">
+    <value>lbl_AboutVersion</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutVersion.Parent" xml:space="preserve">
+    <value>tabPage_about</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutVersion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutFFMPEG.Name" xml:space="preserve">
+    <value>lbl_AboutFFMPEG</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutFFMPEG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutFFMPEG.Parent" xml:space="preserve">
+    <value>tabPage_about</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutFFMPEG.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutNewtonJson.Name" xml:space="preserve">
+    <value>lbl_AboutNewtonJson</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutNewtonJson.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutNewtonJson.Parent" xml:space="preserve">
+    <value>tabPage_about</value>
+  </data>
+  <data name="&gt;&gt;lbl_AboutNewtonJson.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Twitter.Name" xml:space="preserve">
+    <value>lnkLbl_Twitter</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Twitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Twitter.Parent" xml:space="preserve">
+    <value>tabPage_about</value>
+  </data>
+  <data name="&gt;&gt;lnkLbl_Twitter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>tabPage_about</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabPage_about.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 39</value>
+  </data>
+  <data name="tabPage_about.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tabPage_about.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tabPage_about.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1134, 355</value>
+  </data>
+  <data name="tabPage_about.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage_about.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 정보</value>
+  </data>
+  <data name="&gt;&gt;tabPage_about.Name" xml:space="preserve">
+    <value>tabPage_about</value>
+  </data>
+  <data name="&gt;&gt;tabPage_about.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_about.Parent" xml:space="preserve">
+    <value>tabCtrl_Status</value>
+  </data>
+  <data name="&gt;&gt;tabPage_about.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabCtrl_Status.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 425</value>
+  </data>
+  <data name="tabCtrl_Status.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="tabCtrl_Status.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1150, 402</value>
+  </data>
+  <data name="tabCtrl_Status.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabCtrl_Status.Name" xml:space="preserve">
+    <value>tabCtrl_Status</value>
+  </data>
+  <data name="&gt;&gt;tabCtrl_Status.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCtrl_Status.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;tabCtrl_Status.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1198, 850</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lbl_FailedTweetGuide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -230,39 +700,6 @@
   </data>
   <data name="list_FailedTweets.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="ch_num.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 트윗 내용</value>
-  </data>
-  <data name="ch_num.Width" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ch_statusId.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 트윗 고유번호</value>
-  </data>
-  <data name="ch_statusId.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="ch_statusId.Width" type="System.Int32, mscorlib">
-    <value>157</value>
-  </data>
-  <data name="ch_authorScreenName.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 트윗 작성자 아이디</value>
-  </data>
-  <data name="ch_authorScreenName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="ch_authorScreenName.Width" type="System.Int32, mscorlib">
-    <value>233</value>
-  </data>
-  <data name="ch_failedType.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 실패한 것</value>
-  </data>
-  <data name="ch_failedType.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="ch_failedType.Width" type="System.Int32, mscorlib">
-    <value>156</value>
   </data>
   <data name="list_FailedTweets.Items" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -467,35 +904,38 @@
   <data name="&gt;&gt;list_FailedTweets.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tabPage_FailedTweets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 39</value>
+  <data name="ch_num.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 트윗 내용</value>
   </data>
-  <data name="tabPage_FailedTweets.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tabPage_FailedTweets.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tabPage_FailedTweets.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 355</value>
-  </data>
-  <data name="tabPage_FailedTweets.TabIndex" type="System.Int32, mscorlib">
+  <data name="ch_num.Width" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="tabPage_FailedTweets.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 실패한 트윗</value>
+  <data name="ch_statusId.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 트윗 고유번호</value>
   </data>
-  <data name="&gt;&gt;tabPage_FailedTweets.Name" xml:space="preserve">
-    <value>tabPage_FailedTweets</value>
+  <data name="ch_statusId.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="&gt;&gt;tabPage_FailedTweets.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ch_statusId.Width" type="System.Int32, mscorlib">
+    <value>157</value>
   </data>
-  <data name="&gt;&gt;tabPage_FailedTweets.Parent" xml:space="preserve">
-    <value>tabCtrl_Status</value>
+  <data name="ch_authorScreenName.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 트윗 작성자 아이디</value>
   </data>
-  <data name="&gt;&gt;tabPage_FailedTweets.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="ch_authorScreenName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="ch_authorScreenName.Width" type="System.Int32, mscorlib">
+    <value>233</value>
+  </data>
+  <data name="ch_failedType.Text" xml:space="preserve">
+    <value>[HARDCODEDSTR] 실패한 것</value>
+  </data>
+  <data name="ch_failedType.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="ch_failedType.Width" type="System.Int32, mscorlib">
+    <value>156</value>
   </data>
   <data name="lbl_LogNotAvailable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -680,145 +1120,6 @@
   <data name="&gt;&gt;btn_LogSave.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tabPage_Log.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 39</value>
-  </data>
-  <data name="tabPage_Log.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tabPage_Log.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tabPage_Log.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 355</value>
-  </data>
-  <data name="tabPage_Log.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage_Log.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 로그</value>
-  </data>
-  <data name="&gt;&gt;tabPage_Log.Name" xml:space="preserve">
-    <value>tabPage_Log</value>
-  </data>
-  <data name="&gt;&gt;tabPage_Log.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage_Log.Parent" xml:space="preserve">
-    <value>tabCtrl_Status</value>
-  </data>
-  <data name="&gt;&gt;tabPage_Log.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbl_Option_Description.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_Option_Description.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 32</value>
-  </data>
-  <data name="lbl_Option_Description.Size" type="System.Drawing.Size, System.Drawing">
-    <value>508, 25</value>
-  </data>
-  <data name="lbl_Option_Description.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lbl_Option_Description.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 아래의 옵션은 다운로드중엔 바꿀 수 없다</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_Description.Name" xml:space="preserve">
-    <value>lbl_Option_Description</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_Description.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_Description.Parent" xml:space="preserve">
-    <value>tabPage_option</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_Description.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lbl_Option_ExcludeRetweets.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_Option_ExcludeRetweets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 112</value>
-  </data>
-  <data name="lbl_Option_ExcludeRetweets.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 50</value>
-  </data>
-  <data name="lbl_Option_ExcludeRetweets.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lbl_Option_ExcludeRetweets.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 리트윗한 트윗의 프사와 미디어를 다운로드 하지 않습니다. 나중에 계정이 프로텍트 상태가
-되거나 트윗이 삭제되어 버렸을 때 같은 아카이브를 쓰더라도 더 이상 다운로드하지 못할 수 있습니다.</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.Name" xml:space="preserve">
-    <value>lbl_Option_ExcludeRetweets</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.Parent" xml:space="preserve">
-    <value>tabPage_option</value>
-  </data>
-  <data name="&gt;&gt;lbl_Option_ExcludeRetweets.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ckb_Option_ExcludeRetweets.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ckb_Option_ExcludeRetweets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 80</value>
-  </data>
-  <data name="ckb_Option_ExcludeRetweets.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 29</value>
-  </data>
-  <data name="ckb_Option_ExcludeRetweets.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ckb_Option_ExcludeRetweets.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 리트위 제외</value>
-  </data>
-  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.Name" xml:space="preserve">
-    <value>ckb_Option_ExcludeRetweets</value>
-  </data>
-  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.Parent" xml:space="preserve">
-    <value>tabPage_option</value>
-  </data>
-  <data name="&gt;&gt;ckb_Option_ExcludeRetweets.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabPage_option.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 39</value>
-  </data>
-  <data name="tabPage_option.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage_option.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 355</value>
-  </data>
-  <data name="tabPage_option.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabPage_option.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 옵션</value>
-  </data>
-  <data name="&gt;&gt;tabPage_option.Name" xml:space="preserve">
-    <value>tabPage_option</value>
-  </data>
-  <data name="&gt;&gt;tabPage_option.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage_option.Parent" xml:space="preserve">
-    <value>tabCtrl_Status</value>
-  </data>
-  <data name="&gt;&gt;tabPage_option.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lnkLbl_Github.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -990,6 +1291,15 @@
   <data name="&gt;&gt;lnkLbl_Twitter.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="sfd_Log.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>256, 17</value>
+  </metadata>
+  <data name="sfd_Log.Filter" xml:space="preserve">
+    <value>평문 텍스트 로그 파일 (*.log)|*.log|모든 파일 (*.*)|*.*</value>
+  </data>
+  <metadata name="timer_LogRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>349, 17</value>
+  </metadata>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1020,96 +1330,6 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="tabPage_about.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 39</value>
-  </data>
-  <data name="tabPage_about.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tabPage_about.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tabPage_about.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 355</value>
-  </data>
-  <data name="tabPage_about.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPage_about.Text" xml:space="preserve">
-    <value>[HARDCODEDSTR] 정보</value>
-  </data>
-  <data name="&gt;&gt;tabPage_about.Name" xml:space="preserve">
-    <value>tabPage_about</value>
-  </data>
-  <data name="&gt;&gt;tabPage_about.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage_about.Parent" xml:space="preserve">
-    <value>tabCtrl_Status</value>
-  </data>
-  <data name="&gt;&gt;tabPage_about.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabCtrl_Status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 425</value>
-  </data>
-  <data name="tabCtrl_Status.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="tabCtrl_Status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1150, 402</value>
-  </data>
-  <data name="tabCtrl_Status.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tabCtrl_Status.Name" xml:space="preserve">
-    <value>tabCtrl_Status</value>
-  </data>
-  <data name="&gt;&gt;tabCtrl_Status.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabCtrl_Status.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;tabCtrl_Status.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1198, 850</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="sfd_Log.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 17</value>
-  </metadata>
-  <data name="sfd_Log.Filter" xml:space="preserve">
-    <value>평문 텍스트 로그 파일 (*.log)|*.log|모든 파일 (*.*)|*.*</value>
-  </data>
-  <metadata name="timer_LogRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>349, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -7290,6 +7510,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
