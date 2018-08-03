@@ -50,8 +50,47 @@ namespace TwArImg_GUI
 
         private void btnCheckLogin_Click(object sender, EventArgs e)
         {
-            string cookieStr = GetGlobalCookies(webBrowser1.Document.Url.AbsoluteUri);
-            MessageBox.Show(cookieStr);
+            string strCookie = GetGlobalCookies(webBrowser1.Document.Url.AbsoluteUri);
+
+            string strTwitterSess = null;
+            string strAuthToken = null;
+
+            try
+            {
+                // 쿠키중 auth_token과 _twitter_sess만 가져옴
+                int nTwitterSessBegin = strCookie.IndexOf(Downloader.COOKIE_KEY_TWITTER_SESS);
+                int nAuthTokenBegin = strCookie.IndexOf(Downloader.COOKIE_KEY_AUTH_TOKEN);
+
+                // 초벌작업
+                strTwitterSess = strCookie.Substring(nTwitterSessBegin);
+                strAuthToken = strCookie.Substring(nAuthTokenBegin);
+
+                // Length는 1부터 시작합니다.
+                int nTwitterSessStart = Downloader.COOKIE_KEY_TWITTER_SESS.Length;
+                int nAuthTokenStart = Downloader.COOKIE_KEY_AUTH_TOKEN.Length;
+
+                // 첫 ; 을 찾아냄
+                int nTwitterSessEnd = strTwitterSess.IndexOf(';');
+                int nAuthTokenEnd = strAuthToken.IndexOf(';');
+
+                // C#에서 substring 은 startIndex , Length 임에 주의
+                strTwitterSess = strTwitterSess.Substring(nTwitterSessStart, nTwitterSessEnd - nTwitterSessStart);
+                strAuthToken = strAuthToken.Substring(nAuthTokenStart, nAuthTokenEnd - nAuthTokenStart);
+            }
+            catch (Exception)
+            {
+                // 예외 오류가 발생한 경우 null 처리 해서 잔여물을 없앱니다.
+                strTwitterSess = null;
+                strAuthToken = null;
+            }
+            if(strAuthToken == null || strTwitterSess == null)
+            {
+                // 쿠키 따오는데 실패
+                Downloader.getInstance().ConsoleLog(Downloader.LOG_TAG_WARNING, "cannot parse Twitter Session cookie. ");
+                MessageBox.Show("[HARDCODEDSTR]쿠키를 가져오는데 실패하였습니다.");
+            }
+            MessageBox.Show(strCookie);
+            MessageBox.Show("AT = " + strAuthToken + "\r\n" + "TS = " + strTwitterSess);
         }
     }
 }

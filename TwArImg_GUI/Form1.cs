@@ -137,7 +137,7 @@ namespace TwArImg_GUI
             m_strings.setLanguage(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName);
 
             // 다운로더를 초기화합니다.
-            m_dler = new TwArImg_GUI.Downloader();
+            m_dler = Downloader.getInstance();
 
             // 모든것은 파일의 무결성을 검사하는 데에서 시작합니다.
             switch (checkFiles())

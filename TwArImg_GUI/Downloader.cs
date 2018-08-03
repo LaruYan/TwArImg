@@ -16,12 +16,17 @@ namespace TwArImg_GUI
         ///////////////////////////////////////////////////////////////////////
         // 다운로더
 
-        public Downloader()
+        private static Downloader instance = new Downloader();
+        private Downloader()
         {
             //생성자
             
             // 1번 큐를 사용하도록 합니다.
             m_LogQueue = m_LogQueue1;
+        }
+        public static Downloader getInstance()
+        {
+            return instance;
         }
 
 
@@ -50,10 +55,10 @@ namespace TwArImg_GUI
 
         // 콘솔 로그용
 
-        const string LOG_TAG_INFO = " [INFO] ";         // 진행 상황 등에 대한 정보
-        const string LOG_TAG_WARNING = " [WARN] ";      // 경고 : 작동엔 문제 없음
-        const string LOG_TAG_VERBOSE = " [VRBS] ";      // 지나쳐도 되는 것
-        const string LOG_TAG_CRITICAL = " [CRIT] ";     // 오류 / 실패 : 문제가 생김
+        public const string LOG_TAG_INFO = " [INFO] ";         // 진행 상황 등에 대한 정보
+        public const string LOG_TAG_WARNING = " [WARN] ";      // 경고 : 작동엔 문제 없음
+        public const string LOG_TAG_VERBOSE = " [VRBS] ";      // 지나쳐도 되는 것
+        public const string LOG_TAG_CRITICAL = " [CRIT] ";     // 오류 / 실패 : 문제가 생김
         
         private int m_logLevel = 4;
         public int LogLevel
@@ -212,7 +217,7 @@ namespace TwArImg_GUI
         }
 
 
-        private void ConsoleLog(string logTag, string message)
+        public void ConsoleLog(string logTag, string message)
         {
 
             bool shouldBeLogged = false;
@@ -1162,6 +1167,9 @@ namespace TwArImg_GUI
             return "";
         }
 
+        public const string COOKIE_KEY_TWITTER_SESS = "_twitter_sess=";
+        public const string COOKIE_KEY_AUTH_TOKEN = "auth_token=";
+
         private void setCookieForWebDownloader(WebClient webClient)
         {
             /////////////////////////////////////////////////////////
@@ -1170,9 +1178,9 @@ namespace TwArImg_GUI
             string twitterSessionCookie = "YOUR_TWITTER_SESSION_COOKIE_HERE";
             string authTokenCookie = "YOUR_AUTH_TOKEN_COOKIE_HERE";
             // 쿠키를 헤더에 추가합니다.
-            webClient.Headers.Add(HttpRequestHeader.Cookie, "_twitter_sess=" + twitterSessionCookie
+            webClient.Headers.Add(HttpRequestHeader.Cookie, COOKIE_KEY_TWITTER_SESS + twitterSessionCookie
                 +";"
-                +"auth_token=" + authTokenCookie);
+                + COOKIE_KEY_AUTH_TOKEN + authTokenCookie);
             //webClient.Headers.Add(HttpRequestHeader.Cookie, "ct0=" + "YOUR_CT0_COOKIE_HERE");
             //webClient.Headers.Add(HttpRequestHeader.Cookie, "kdt=" + "YOUR_KDT_COOKIE_HERE");
         }
