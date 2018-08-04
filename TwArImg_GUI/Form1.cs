@@ -573,22 +573,31 @@ namespace TwArImg_GUI
 
         private void ckb_Option_Login_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckb_Option_Login.Checked)
-            {
-                TwitterWeb twtWeb = new TwitterWeb();
-                twtWeb.Show();
-            }
-            else
-            {
-                // 로그아웃 필요
-                logout();
-            }
+            // 체크상태의 변화 리스너
+            // 클릭할 때 처리해야 하므로 여기선 할 일이 없다.
         }
 
         private void logout()
         {
             //로그아웃
             m_dler.invalidateWebToken();
+        }
+
+        private void ckb_Option_Login_Click(object sender, EventArgs e)
+        {
+            // 클릭 여부 리스너
+            if (ckb_Option_Login.Checked)
+            {
+                TwitterWeb twtWeb = new TwitterWeb();
+                twtWeb.ShowDialog(); //모달로 출력
+                // 아래는 ShowDialog로 연 창이 닫힌 이후에 처리됨
+                ckb_Option_Login.Checked = m_dler.isWebTokenValid();
+            }
+            else
+            {
+                // 로그아웃 필요
+                logout();
+            }
         }
     }
 }

@@ -225,6 +225,7 @@
             this.ckb_Option_Login.Name = "ckb_Option_Login";
             this.ckb_Option_Login.UseVisualStyleBackColor = true;
             this.ckb_Option_Login.CheckedChanged += new System.EventHandler(this.ckb_Option_Login_CheckedChanged);
+            this.ckb_Option_Login.Click += new System.EventHandler(this.ckb_Option_Login_Click);
             // 
             // lbl_Option_Description
             // 

@@ -1217,20 +1217,21 @@ namespace TwArImg_GUI
         
         public void invalidateWebToken()
         {
+            // TODO twitter.com/logout 으로 접속이 로그아웃으로 바로 이어지지 않고
+            // 로그아웃을 방해하는 페이지가 있다. 나중에 하자.
+            if (false)
+            {
+                string logoutPage = null;
+                using (WebClient logoutWebClient = new WebClient())
+                {
+                    setCookieForWebDownloader(logoutWebClient);
+
+                    logoutPage = logoutWebClient.DownloadString("https://twitter.com/logout");
+                }
+            }
             twitterSessionCookie = null;
             authTokenCookie = null;
-
-            // TODO twitter.com/logout 으로 접속이 로그아웃으로 이어지지 않고
-            // 로그아웃을 방해하는 페이지가 있다. 나중에 하자.
-            return;
-
-            string logoutPage = null;
-            using (WebClient logoutWebClient = new WebClient())
-            {
-                setCookieForWebDownloader(logoutWebClient);
-
-                logoutPage = logoutWebClient.DownloadString("https://twitter.com/logout");
-            }
+            ConsoleLog(LOG_TAG_INFO, "invalidated Twitter Session cookie.");
         }
     }
 }
