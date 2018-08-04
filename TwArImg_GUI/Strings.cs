@@ -68,7 +68,7 @@
             OptionExcludeRetweets = "Exclude Retweets";
             OptionExcludeRetweetsDesc = "If checked, TweetMediaArchiver won't download profile picture or media(s) of retweeted tweets.\nAny tweets became protected or deleted later sometime, TweetMediaArchive cannot download of those.";
             OptionLogin = "Download media from protected account";
-            OptionLoginDesc = "If archive owner or some tweet's author were protected account, Sign-in is required\nto download their videos. To sign-in or out, Click checkbox above.";
+            OptionLoginDesc = "Sign-in is required, if archive owner or some tweet's author were protected account,\nto download their videos. To sign-in or out, Click checkbox above.";
             WindowLoginDesc = "Please sign-in on page shown below with account whose archive is created from. Then close this window if timeline page is shown below.";
             WindowLogoutDesc = "Please press log-out button on page shown below. Close this window if logging out was successful.";
             LoginFailed = "Couln't retrieve session data.\nYou can't download medias from protected accounts";

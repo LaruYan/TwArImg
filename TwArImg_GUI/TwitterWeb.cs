@@ -105,7 +105,7 @@ namespace TwArImg_GUI
                 Downloader.getInstance().invalidateWebToken();
                 if (m_isLoginMode)
                 {
-                    MessageBox.Show(m_strings.LoginFailed);
+                    MessageBox.Show(m_strings.LoginFailed, m_strings.AppName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -122,11 +122,11 @@ namespace TwArImg_GUI
                 Downloader.getInstance().ConsoleLog(Downloader.LOG_TAG_INFO, "Got Twitter Session cookie. ");
                 if (m_isLoginMode)
                 {
-                    MessageBox.Show(m_strings.LoginSuccessful);
+                    MessageBox.Show(m_strings.LoginSuccessful, m_strings.AppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(m_strings.LoginStillValid);
+                    MessageBox.Show(m_strings.LoginStillValid, m_strings.AppName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             //MessageBox.Show(strCookie);
