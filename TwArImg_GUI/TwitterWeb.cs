@@ -35,20 +35,35 @@ namespace TwArImg_GUI
         }
         // HttpOnly 쿠키를 받아오기 끝
 
-        public TwitterWeb()
+        bool m_isLoginMode = false;
+        ResStrings m_strings = null;
+
+        public TwitterWeb(bool isLogin, ResStrings strings)
         {
+            m_isLoginMode = isLogin;
+            m_strings = strings;
             InitializeComponent();
         }
 
         private void TwitterWeb_Load(object sender, EventArgs e)
         {
-            // 웹 트위터 접속. 첫페이지에 로그인 입력칸이 있다.
-            webBrowser1.Navigate("https://twitter.com/");
-
+            
+            if (m_isLoginMode)
+            {
+                lbl_Login_Instruction.Text = m_strings.WindowLoginDesc;
+                // 웹 트위터 접속. 첫페이지에 로그인 입력칸이 있다.
+                webBrowser1.Navigate("https://twitter.com/");
+            }
+            else
+            {
+                lbl_Login_Instruction.Text = m_strings.WindowLogoutDesc;
+                // 로그아웃 창. 정말로 로그아웃 할 것인지 물어본다.
+                webBrowser1.Navigate("https://twitter.com/logout");
+            }
             
         }
 
-        private void btnCheckLogin_Click(object sender, EventArgs e)
+        private void checkLogin(FormClosingEventArgs e)
         {
             string strCookie = GetGlobalCookies(webBrowser1.Document.Url.AbsoluteUri);
 
@@ -87,19 +102,40 @@ namespace TwArImg_GUI
             {
                 // 쿠키 가져오는데 실패
                 Downloader.getInstance().ConsoleLog(Downloader.LOG_TAG_WARNING, "cannot parse Twitter Session cookie. ");
-                MessageBox.Show("[HARDCODEDSTR]쿠키를 가져오는데 실패하였습니다.");
+                Downloader.getInstance().invalidateWebToken();
+                if (m_isLoginMode)
+                {
+                    MessageBox.Show(m_strings.LoginFailed);
+                }
+                else
+                {
+                    // 로그아웃에 성공한건데 그냥 닫혀도 괜찮지 않을까.
+                    //MessageBox.Show("[HARDCODEDSTR]로그아웃이 정상적으로 되어있습니다.");
+                }
             }
             else
             {
                 // 토큰을 가져왔습니다.
-                // 다운로더에 설정하고 창을 닫습니다.
+
+                // 다운로더에 설정합니다.
                 Downloader.getInstance().setWebToken(strTwitterSess, strAuthToken);
                 Downloader.getInstance().ConsoleLog(Downloader.LOG_TAG_INFO, "Got Twitter Session cookie. ");
-                MessageBox.Show("[HARDCODEDSTR]쿠키를 가져오는데 성공했습니다." + "\r\n" + "이제 프로텍트 계정의 미디어도 가져올 수 있습니다.");
-                this.Close();
+                if (m_isLoginMode)
+                {
+                    MessageBox.Show(m_strings.LoginSuccessful);
+                }
+                else
+                {
+                    MessageBox.Show(m_strings.LoginStillValid);
+                }
             }
             //MessageBox.Show(strCookie);
             //MessageBox.Show("AT = " + strAuthToken + "\r\n" + "TS = " + strTwitterSess);
+        }
+
+        private void TwitterWeb_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            checkLogin(e);
         }
     }
 }

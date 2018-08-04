@@ -225,6 +225,9 @@ namespace TwArImg_GUI
             ckb_Option_ExcludeRetweets.Text = m_strings.OptionExcludeRetweets;
             lbl_Option_ExcludeRetweets.Text = m_strings.OptionExcludeRetweetsDesc;
 
+            ckb_Option_Login.Text = m_strings.OptionLogin;
+            lbl_Option_Login.Text = m_strings.OptionLoginDesc;
+
             //정보
             lbl_AboutVersion.Text = m_strings.AppName + " " + VERSION_STRING;
 
@@ -580,7 +583,17 @@ namespace TwArImg_GUI
         private void logout()
         {
             //로그아웃
-            m_dler.invalidateWebToken();
+            TwitterWeb twtWeb = new TwitterWeb(false, m_strings);
+            twtWeb.ShowDialog(); //모달로 출력
+            ckb_Option_Login.Checked = m_dler.isWebTokenValid();
+        }
+        
+        private void login()
+        {
+            TwitterWeb twtWeb = new TwitterWeb(true, m_strings);
+            twtWeb.ShowDialog(); //모달로 출력
+                                 // 아래는 ShowDialog로 연 창이 닫힌 이후에 처리됨
+            ckb_Option_Login.Checked = m_dler.isWebTokenValid();
         }
 
         private void ckb_Option_Login_Click(object sender, EventArgs e)
@@ -588,10 +601,8 @@ namespace TwArImg_GUI
             // 클릭 여부 리스너
             if (ckb_Option_Login.Checked)
             {
-                TwitterWeb twtWeb = new TwitterWeb();
-                twtWeb.ShowDialog(); //모달로 출력
-                // 아래는 ShowDialog로 연 창이 닫힌 이후에 처리됨
-                ckb_Option_Login.Checked = m_dler.isWebTokenValid();
+                // 로그인 필요
+                login();
             }
             else
             {

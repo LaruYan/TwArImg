@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.btn_Login_CheckLogin = new System.Windows.Forms.Button();
             this.lbl_Login_Instruction = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,24 +43,15 @@
             this.webBrowser1.Size = new System.Drawing.Size(1340, 531);
             this.webBrowser1.TabIndex = 0;
             // 
-            // btn_Login_CheckLogin
-            // 
-            this.btn_Login_CheckLogin.Location = new System.Drawing.Point(9, 12);
-            this.btn_Login_CheckLogin.Name = "btn_Login_CheckLogin";
-            this.btn_Login_CheckLogin.Size = new System.Drawing.Size(194, 35);
-            this.btn_Login_CheckLogin.TabIndex = 1;
-            this.btn_Login_CheckLogin.Text = "[HARDCODEDSTR]로그인 확인";
-            this.btn_Login_CheckLogin.UseVisualStyleBackColor = true;
-            this.btn_Login_CheckLogin.Click += new System.EventHandler(this.btnCheckLogin_Click);
-            // 
             // lbl_Login_Instruction
             // 
             this.lbl_Login_Instruction.AutoSize = true;
-            this.lbl_Login_Instruction.Location = new System.Drawing.Point(209, 17);
+            this.lbl_Login_Instruction.Location = new System.Drawing.Point(12, 9);
             this.lbl_Login_Instruction.Name = "lbl_Login_Instruction";
-            this.lbl_Login_Instruction.Size = new System.Drawing.Size(982, 25);
+            this.lbl_Login_Instruction.Size = new System.Drawing.Size(1138, 25);
             this.lbl_Login_Instruction.TabIndex = 2;
-            this.lbl_Login_Instruction.Text = "[HARDCODEDSTR]아래 화면에서 트위터에 아카이브를 만들었던 계정으로 로그인하신 다음, 로그인 확인 버튼을 눌러주십시오.";
+            this.lbl_Login_Instruction.Text = "[HARDCODEDSTR]아래 화면에서 트위터에 아카이브를 만들었던 계정으로 로그인하신 다음, 로그인에 성공해 타임라인이 표시되면 창을 닫아주세요" +
+    ".";
             // 
             // TwitterWeb
             // 
@@ -69,10 +59,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1407, 646);
             this.Controls.Add(this.lbl_Login_Instruction);
-            this.Controls.Add(this.btn_Login_CheckLogin);
             this.Controls.Add(this.webBrowser1);
             this.Name = "TwitterWeb";
             this.Text = "Twitter Web";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TwitterWeb_FormClosing);
             this.Load += new System.EventHandler(this.TwitterWeb_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -82,7 +72,6 @@
         #endregion
 
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Button btn_Login_CheckLogin;
         private System.Windows.Forms.Label lbl_Login_Instruction;
     }
 }
