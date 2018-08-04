@@ -166,7 +166,7 @@ namespace TwArImg_GUI
 
             //////////////////////////////////////////////////////
             // UI 초기화
-            http://www.codeproject.com/Articles/65185/Windows-Taskbar-C-Quick-Reference
+            // http://www.codeproject.com/Articles/65185/Windows-Taskbar-C-Quick-Reference
             //TaskbarManager.Instance.ApplicationId = "TaskbarManaged";
 
             if (false) { 
@@ -277,6 +277,7 @@ namespace TwArImg_GUI
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            bool isForceExit = false;
             // 내려받기 중인 경우, 폼을 닫기 전 사용자의 확인을 구해야합니다.
             if (m_dler.IsInOperation)
             {
@@ -285,13 +286,44 @@ namespace TwArImg_GUI
                 {
                     // 예 버튼을 눌렀습니다. 종료를 허락합니다.
                     e.Cancel = false;
-                    Application.Exit();
+                    isForceExit = true;
                 }
                 else
                 {
                     // 아니오 버튼을 눌렀습니다. 아무것도 하지 않습니다.
                     e.Cancel = true;
                 }
+            }
+
+            bool dontWantLogout = false;
+            bool wantLogout = false;
+            while (!dontWantLogout)
+            {
+                if (m_dler.isWebTokenValid)
+                {
+                    // 웹토큰이 유효합니다.
+                    if (wantLogout || DialogResult.Yes == MessageBox.Show(m_strings.QuitIfLoggedIn, m_strings.QuitMe, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                    {
+                        //로그아웃을 원합니다. 로그아웃을 수행합니다.
+                        // OR 연산자는 왼쪽부터 순서대로 수행하다 조건이 true면 다음 조건은 검사하지 않고 내려옵니다.
+                        wantLogout = true;
+                        logout();
+                    }
+                    else
+                    {
+                        //로그아웃을 원하지 않습니다.
+                        dontWantLogout = true;
+                    }
+                }
+                else
+                {
+                    dontWantLogout = true;
+                }
+            }
+
+            if (isForceExit)
+            {
+                Application.Exit();
             }
         }
 
@@ -585,7 +617,7 @@ namespace TwArImg_GUI
             //로그아웃
             TwitterWeb twtWeb = new TwitterWeb(false, m_strings);
             twtWeb.ShowDialog(); //모달로 출력
-            ckb_Option_Login.Checked = m_dler.isWebTokenValid();
+            ckb_Option_Login.Checked = m_dler.isWebTokenValid;
         }
         
         private void login()
@@ -593,7 +625,7 @@ namespace TwArImg_GUI
             TwitterWeb twtWeb = new TwitterWeb(true, m_strings);
             twtWeb.ShowDialog(); //모달로 출력
                                  // 아래는 ShowDialog로 연 창이 닫힌 이후에 처리됨
-            ckb_Option_Login.Checked = m_dler.isWebTokenValid();
+            ckb_Option_Login.Checked = m_dler.isWebTokenValid;
         }
 
         private void ckb_Option_Login_Click(object sender, EventArgs e)

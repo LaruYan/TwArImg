@@ -4,6 +4,7 @@
     {
         public string FirstStart { get; internal set; }
         public string QuitWhileDLing { get; internal set; }
+        public string QuitIfLoggedIn { get; internal set; }
         public string QuitMe { get; internal set; }
         public string ReleaseMouseHere { get; internal set; }
         public string NowDLing { get; internal set; }
@@ -42,6 +43,7 @@
             // 기본은 영어부터 시작하자.
             FirstStart = "To begin download, Drag and drop an extracted Twitter archive from File Explorer to here.";
             QuitWhileDLing = "Downloading is in progress. Do you want to quit and stop downloading?";
+            QuitIfLoggedIn = "You have active login for Twitter on this computer. Do you want to logout now?";
             QuitMe = "Quit TweetMediaArchiver";
             ReleaseMouseHere = "Great! Release mouse buttons to start download.";
             NowDLing = "Now downloading with parsing Twitter Archive. This may take few minutes to tens of minutes, depending how many have you been tweeted. Computer specs and internet speed also affects.";
@@ -73,7 +75,7 @@
             WindowLogoutDesc = "Please press log-out button on page shown below. Close this window if logging out was successful.";
             LoginFailed = "Couln't retrieve session data.\nYou can't download medias from protected accounts";
             LoginSuccessful = "Retrieved session data.\nNow You can now download medias from protected accounts.";
-            LoginStillValid = "Your session is still valid.\nYour Twitter log-in may valid on Internet Explorer on this computer.\nTo sign-out, click checkbox again and try again.";
+            LoginStillValid = "Your login is still valid.\nYour Twitter log-in may valid on Internet Explorer on this computer.\nTo sign-out, click checkbox again and try again.";
         }
 
         // CultureInfo.ThreeLetterISOLanguage 를 이용한 시스템 UI 언어 판독
@@ -107,6 +109,11 @@
             if (stringsSet.QuitWhileDLing != null)
             {
                 QuitWhileDLing = stringsSet.QuitWhileDLing;
+            }
+
+            if (stringsSet.QuitIfLoggedIn != null)
+            {
+                QuitIfLoggedIn = stringsSet.QuitIfLoggedIn;
             }
 
             if (stringsSet.QuitMe != null)
@@ -277,6 +284,7 @@
         {
             FirstStart = "다운로드를 시작하려면 압축이 풀린 트위터 아카이브 폴더를 여기에 끌어다 놓아주세요.";
             QuitWhileDLing = "다운로드가 진행중입니다. 다운로드를 중단하고 종료해도 괜찮으신가요?";
+            QuitIfLoggedIn = "현재 이 컴퓨터에 트위터로 로그인이 되어있습니다. 지금 로그아웃 하실래요?";
             QuitMe = "트윗 미디어 아카이버 끝내기";
             ReleaseMouseHere = "좋습니다! 시작하려면 마우스 버튼을 놓아주세요.";
             NowDLing = "트위터 아카이브를 분석하여 미디어를 다운로드하고 있습니다. 이 작업은 쓰신 트윗 갯수, 컴퓨터 성능 및 인터넷 속도에 따라 수 분에서 수십 분 걸립니다.";
@@ -318,6 +326,7 @@
         {
             FirstStart = "ダウンロードを始めるなら圧縮解除されたツイーターアーカイブのフォルダをここに引いておくてください。";
             QuitWhileDLing = "ダウンロード中です。ダウンロードを中断して、終了してもいいですか？";
+            QuitIfLoggedIn = "このパソコンにツイーターにログインされています。今ログアウトしますか？";
             QuitMe = "ツイートメディアアーカイバー終了";
             ReleaseMouseHere = "よし！始めるならマウスのボタンを放してください。";
             NowDLing = "ツイーターアーカイブを読みながらメディアをダウンロードしています。この作業はツイートの数、お使いパソコンのスペックやネットのスピードによって数分から数十分くらい手間取ります。";

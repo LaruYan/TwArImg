@@ -1206,19 +1206,18 @@ namespace TwArImg_GUI
             authTokenCookie = authToken;
         }
 
-        public bool isWebTokenValid()
-        {
-            // 트위터 웹 토큰이 유효한지 확인합니다.
-            // null 만 아니면 일단 될 듯
-
-            return twitterSessionCookie != null && authTokenCookie != null;
+        public bool isWebTokenValid {
+            get {
+                // 트위터 웹 토큰이 유효한지 확인합니다.
+                // null 만 아니면 일단 될 듯
+                return twitterSessionCookie != null && authTokenCookie != null;
+            }
         }
-
         
         public void invalidateWebToken()
         {
-            // TODO twitter.com/logout 으로 접속이 로그아웃으로 바로 이어지지 않고
-            // 로그아웃을 방해하는 페이지가 있다. 나중에 하자.
+            // twitter.com/logout 으로 접속이 로그아웃으로 바로 이어지지 않고
+            // 로그아웃을 방해하는 페이지가 있다.
             if (false)
             {
                 string logoutPage = null;
