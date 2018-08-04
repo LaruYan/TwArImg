@@ -91,16 +91,17 @@ namespace TwArImg_GUI
                 integrity = 1;
             }
 
+            //이제 Newtonsoft.Json.dll은 exe에 포함되어 배포됩니다.
             //checksum of Newtonsoft.Json.dll
             //CRC - 32: da220ecc
             //     MD4: 339614eec6c2e5a017e27d249b2e07d9
             //     MD5: c53737821b861d454d5248034c3c097c
             // SHA - 1: 6b0da75617a2269493dc1a685d7a0b07f2e48c75
             // SHA-256: 575E30F98E4EA42C9E516EDC8BBB29AD8B50B173A3E6B36B5BA39E133CCE9406
-            if ( ! "575E30F98E4EA42C9E516EDC8BBB29AD8B50B173A3E6B36B5BA39E133CCE9406".Equals(checksumSHA1("Newtonsoft.Json.dll")))
-            {
-                return -1;// 치명적
-            }
+            //if ( ! "575E30F98E4EA42C9E516EDC8BBB29AD8B50B173A3E6B36B5BA39E133CCE9406".Equals(checksumSHA1("Newtonsoft.Json.dll")))
+            //{
+            //    return -1;// 치명적
+            //}
 
             return integrity;
         }

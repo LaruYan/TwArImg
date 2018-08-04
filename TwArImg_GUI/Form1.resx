@@ -998,13 +998,13 @@
     <value>6, 0, 6, 0</value>
   </data>
   <data name="lbl_AboutNewtonJson.Size" type="System.Drawing.Size, System.Drawing">
-    <value>338, 25</value>
+    <value>615, 25</value>
   </data>
   <data name="lbl_AboutNewtonJson.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="lbl_AboutNewtonJson.Text" xml:space="preserve">
-    <value>Powered by Newtonsoft Json.NET</value>
+    <value>Powered by Newtonsoft Json.NET. Packaging by Costura.Fody</value>
   </data>
   <data name="&gt;&gt;lbl_AboutNewtonJson.Name" xml:space="preserve">
     <value>lbl_AboutNewtonJson</value>
