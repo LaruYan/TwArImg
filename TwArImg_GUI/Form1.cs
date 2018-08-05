@@ -10,7 +10,7 @@ namespace TwArImg_GUI
 {
     public partial class MainForm : Form
     {
-        public const string VERSION_STRING = "v0.9-unreleased";
+        public const string VERSION_STRING = "v0.9";
         ///////////////////////////////////////////////////////////////////////
         // UI
 
