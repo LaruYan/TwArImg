@@ -6,5 +6,6 @@ Tweet Media Archiver. Downloads your Twitter archive's pictures and videos.
 
 ツイートメディアアーカイバ。　ツイーターのアーカイブの写真や動画をダウンロード。
 
-description 설명 説明
+# ReadMe 읽어주세요 読んでください
+
 <https://github.com/LaruYan/TwArImg/wiki/Tweet-Media-Archiver>
