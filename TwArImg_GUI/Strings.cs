@@ -70,7 +70,7 @@
             OptionExcludeRetweets = "Exclude Retweets";
             OptionExcludeRetweetsDesc = "If checked, TweetMediaArchiver won't download profile picture or media(s) of retweeted tweets.\nAny tweets became protected or deleted later sometime, TweetMediaArchive cannot download of those.";
             OptionLogin = "Download media from protected account";
-            OptionLoginDesc = "Sign-in is required, if archive owner or some tweet's author were protected account,\nto download their videos. To sign-in or out, Click checkbox above.";
+            OptionLoginDesc = "Sign-in is required, if archive owner or some tweet's author were protected account,\nto download their videos. To sign-in or out, Click checkbox above.\n(Can download if account signed in is following the author of media)";
             WindowLoginDesc = "Please sign-in on page shown below with account whose archive is created from. Then close this window if timeline page is shown below.";
             WindowLogoutDesc = "Please press log-out button on page shown below. Close this window if logging out was successful.";
             LoginFailed = "Couln't retrieve session data.\nYou can't download medias from protected accounts";
@@ -311,7 +311,7 @@
             OptionExcludeRetweets = "리트윗 제외";
             OptionExcludeRetweetsDesc = "체크하면 리트윗한 트윗의 프로필 사진과 미디어를 다운로드 하지 않습니다. 나중에 계정이\n프로텍트 상태가되거나 트윗이 삭제되어 버렸을 때 더 이상 다운로드하지 못할 수 있습니다.";
             OptionLogin = "프로텍트 계정 미디어 다운로드";
-            OptionLoginDesc = "아카이브 주인 또는 트윗 작성자가 프로텍트 계정이면 동영상을 다운로드할 때 로그인이 필요합니다.\n체크박스를 클릭하시면 로그인 또는 로그아웃 창이 나타납니다.";
+            OptionLoginDesc = "아카이브 주인 또는 트윗 작성자가 프로텍트 계정이면 동영상을 다운로드할 때 로그인이 필요합니다.\n체크박스를 클릭하시면 로그인 또는 로그아웃 창이 나타납니다.\n(로그인 된 계정이 미디어 게시자를 팔로우 하고 있는 경우에만 다운로드 가능)";
             WindowLoginDesc = "아래 화면에서 트위터에 아카이브를 만들었던 계정으로 로그인하신 다음, 로그인에 성공해 타임라인이 표시되면 창을 닫아주세요.";
             WindowLogoutDesc = "아래 화면에서 로그아웃 버튼을 눌러주세요. 로그아웃에 성공하면 창을 닫아주세요.";
             LoginFailed = "로그인 정보를 가져오지 못했습니다.\n프로텍트 계정의 미디어를 가져올 수 없습니다.";
@@ -353,7 +353,7 @@
             OptionExcludeRetweets = "リツイートは抜きにする";
             OptionExcludeRetweetsDesc = "チェックしたら、リツイートのプロフィール写真やメディアをダウンロードしません。後でツイートが\n非公開になるとか削除された場合、もうダウンロードできないようになるかもしれません。";
             OptionLogin = "非公開アカウントのメディアをダウンロードする";
-            OptionLoginDesc = "アーカイブの元主やあるツイートが非公開アカウントなら、動画をダウンロードするためログインしてください\nチェックボックスをクリックするとログインやログアウト画面がでてきます。";
+            OptionLoginDesc = "アーカイブの元主やあるツイートが非公開アカウントなら、動画をダウンロードするためログインしてください\nチェックボックスをクリックするとログインやログアウト画面がでてきます。\n（ログインしたアカウントがメディアの掲示者をフォローしてこそダウンロードが可能）";
             WindowLoginDesc = "下の画面でツイーターからアーカイブをもらったアカウントでログインしてください。成功しTLが表示されたら、この画面を閉じてください。";
             WindowLogoutDesc = "下の画面でログアウトをクリックしてください。ログアウトできたら画面を閉じてください。";
             LoginFailed = "ログイン情報をもらえできませんでした。\n非公開アカウントのメディアをダウンロードができません。";
