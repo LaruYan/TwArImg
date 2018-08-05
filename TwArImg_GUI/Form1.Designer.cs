@@ -48,6 +48,11 @@
             this.ckb_LogAutoScroll = new System.Windows.Forms.CheckBox();
             this.btn_LogSave = new System.Windows.Forms.Button();
             this.tabPage_option = new System.Windows.Forms.TabPage();
+            this.lbl_Option_Login = new System.Windows.Forms.Label();
+            this.ckb_Option_Login = new System.Windows.Forms.CheckBox();
+            this.lbl_Option_Description = new System.Windows.Forms.Label();
+            this.lbl_Option_ExcludeRetweets = new System.Windows.Forms.Label();
+            this.ckb_Option_ExcludeRetweets = new System.Windows.Forms.CheckBox();
             this.tabPage_about = new System.Windows.Forms.TabPage();
             this.lnkLbl_Github = new System.Windows.Forms.LinkLabel();
             this.lbl_AboutVersion = new System.Windows.Forms.Label();
@@ -57,9 +62,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sfd_Log = new System.Windows.Forms.SaveFileDialog();
             this.timer_LogRefresh = new System.Windows.Forms.Timer(this.components);
-            this.ckb_Option_ExcludeRetweets = new System.Windows.Forms.CheckBox();
-            this.lbl_Option_ExcludeRetweets = new System.Windows.Forms.Label();
-            this.lbl_Option_Description = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Guide)).BeginInit();
             this.tabCtrl_Status.SuspendLayout();
@@ -203,12 +205,43 @@
             // 
             // tabPage_option
             // 
+            this.tabPage_option.Controls.Add(this.lbl_Option_Login);
+            this.tabPage_option.Controls.Add(this.ckb_Option_Login);
             this.tabPage_option.Controls.Add(this.lbl_Option_Description);
             this.tabPage_option.Controls.Add(this.lbl_Option_ExcludeRetweets);
             this.tabPage_option.Controls.Add(this.ckb_Option_ExcludeRetweets);
             resources.ApplyResources(this.tabPage_option, "tabPage_option");
             this.tabPage_option.Name = "tabPage_option";
             this.tabPage_option.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Option_Login
+            // 
+            resources.ApplyResources(this.lbl_Option_Login, "lbl_Option_Login");
+            this.lbl_Option_Login.Name = "lbl_Option_Login";
+            // 
+            // ckb_Option_Login
+            // 
+            resources.ApplyResources(this.ckb_Option_Login, "ckb_Option_Login");
+            this.ckb_Option_Login.Name = "ckb_Option_Login";
+            this.ckb_Option_Login.UseVisualStyleBackColor = true;
+            this.ckb_Option_Login.CheckedChanged += new System.EventHandler(this.ckb_Option_Login_CheckedChanged);
+            this.ckb_Option_Login.Click += new System.EventHandler(this.ckb_Option_Login_Click);
+            // 
+            // lbl_Option_Description
+            // 
+            resources.ApplyResources(this.lbl_Option_Description, "lbl_Option_Description");
+            this.lbl_Option_Description.Name = "lbl_Option_Description";
+            // 
+            // lbl_Option_ExcludeRetweets
+            // 
+            resources.ApplyResources(this.lbl_Option_ExcludeRetweets, "lbl_Option_ExcludeRetweets");
+            this.lbl_Option_ExcludeRetweets.Name = "lbl_Option_ExcludeRetweets";
+            // 
+            // ckb_Option_ExcludeRetweets
+            // 
+            resources.ApplyResources(this.ckb_Option_ExcludeRetweets, "ckb_Option_ExcludeRetweets");
+            this.ckb_Option_ExcludeRetweets.Name = "ckb_Option_ExcludeRetweets";
+            this.ckb_Option_ExcludeRetweets.UseVisualStyleBackColor = true;
             // 
             // tabPage_about
             // 
@@ -268,22 +301,6 @@
             // timer_LogRefresh
             // 
             this.timer_LogRefresh.Interval = 1000;
-            // 
-            // ckb_Option_ExcludeRetweets
-            // 
-            resources.ApplyResources(this.ckb_Option_ExcludeRetweets, "ckb_Option_ExcludeRetweets");
-            this.ckb_Option_ExcludeRetweets.Name = "ckb_Option_ExcludeRetweets";
-            this.ckb_Option_ExcludeRetweets.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Option_ExcludeRetweets
-            // 
-            resources.ApplyResources(this.lbl_Option_ExcludeRetweets, "lbl_Option_ExcludeRetweets");
-            this.lbl_Option_ExcludeRetweets.Name = "lbl_Option_ExcludeRetweets";
-            // 
-            // lbl_Option_Description
-            // 
-            resources.ApplyResources(this.lbl_Option_Description, "lbl_Option_Description");
-            this.lbl_Option_Description.Name = "lbl_Option_Description";
             // 
             // MainForm
             // 
@@ -346,6 +363,8 @@
         private System.Windows.Forms.Label lbl_Option_ExcludeRetweets;
         private System.Windows.Forms.CheckBox ckb_Option_ExcludeRetweets;
         private System.Windows.Forms.Label lbl_Option_Description;
+        private System.Windows.Forms.CheckBox ckb_Option_Login;
+        private System.Windows.Forms.Label lbl_Option_Login;
     }
 }
 

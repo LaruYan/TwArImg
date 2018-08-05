@@ -4,6 +4,7 @@
     {
         public string FirstStart { get; internal set; }
         public string QuitWhileDLing { get; internal set; }
+        public string QuitIfLoggedIn { get; internal set; }
         public string QuitMe { get; internal set; }
         public string ReleaseMouseHere { get; internal set; }
         public string NowDLing { get; internal set; }
@@ -29,12 +30,20 @@
         public string OptionDesc { get; internal set; }
         public string OptionExcludeRetweets { get; internal set; }
         public string OptionExcludeRetweetsDesc { get; internal set; }
+        public string OptionLogin { get; internal set; }
+        public string OptionLoginDesc { get; internal set; }
+        public string WindowLoginDesc { get; internal set; }
+        public string WindowLogoutDesc { get; internal set; }
+        public string LoginFailed { get; internal set; }
+        public string LoginSuccessful { get; internal set; }
+        public string LoginStillValid { get; internal set; }
 
         public ResStrings()
         {
             // 기본은 영어부터 시작하자.
             FirstStart = "To begin download, Drag and drop an extracted Twitter archive from File Explorer to here.";
             QuitWhileDLing = "Downloading is in progress. Do you want to quit and stop downloading?";
+            QuitIfLoggedIn = "You have active login for Twitter on this computer. Do you want to logout now?";
             QuitMe = "Quit TweetMediaArchiver";
             ReleaseMouseHere = "Great! Release mouse buttons to start download.";
             NowDLing = "Now downloading with parsing Twitter Archive. This may take few minutes to tens of minutes, depending how many have you been tweeted. Computer specs and internet speed also affects.";
@@ -60,6 +69,13 @@
             OptionDesc = "Option below cannot be changed while downloading.";
             OptionExcludeRetweets = "Exclude Retweets";
             OptionExcludeRetweetsDesc = "If checked, TweetMediaArchiver won't download profile picture or media(s) of retweeted tweets.\nAny tweets became protected or deleted later sometime, TweetMediaArchive cannot download of those.";
+            OptionLogin = "Download media from protected account";
+            OptionLoginDesc = "Sign-in is required, if archive owner or some tweet's author were protected account,\nto download their videos. To sign-in or out, Click checkbox above.\n(Can download if account signed in is following the author of media)";
+            WindowLoginDesc = "Please sign-in on page shown below with account whose archive is created from. Then close this window if timeline page is shown below.";
+            WindowLogoutDesc = "Please press log-out button on page shown below. Close this window if logging out was successful.";
+            LoginFailed = "Couln't retrieve session data.\nYou can't download medias from protected accounts";
+            LoginSuccessful = "Retrieved session data.\nNow You can now download medias from protected accounts.";
+            LoginStillValid = "Your login is still valid.\nYour Twitter log-in may valid on Internet Explorer on this computer.\nTo sign-out, click checkbox again and try again.";
         }
 
         // CultureInfo.ThreeLetterISOLanguage 를 이용한 시스템 UI 언어 판독
@@ -93,6 +109,11 @@
             if (stringsSet.QuitWhileDLing != null)
             {
                 QuitWhileDLing = stringsSet.QuitWhileDLing;
+            }
+
+            if (stringsSet.QuitIfLoggedIn != null)
+            {
+                QuitIfLoggedIn = stringsSet.QuitIfLoggedIn;
             }
 
             if (stringsSet.QuitMe != null)
@@ -219,6 +240,41 @@
             {
                 OptionExcludeRetweetsDesc = stringsSet.OptionExcludeRetweetsDesc;
             }
+
+            if (stringsSet.OptionLogin != null)
+            {
+                OptionLogin = stringsSet.OptionLogin;
+            }
+
+            if (stringsSet.OptionLoginDesc != null)
+            {
+                OptionLoginDesc = stringsSet.OptionLoginDesc;
+            }
+
+            if (stringsSet.WindowLoginDesc != null)
+            {
+                WindowLoginDesc = stringsSet.WindowLoginDesc;
+            }
+
+            if (stringsSet.WindowLogoutDesc != null)
+            {
+                WindowLogoutDesc = stringsSet.WindowLogoutDesc;
+            }
+
+            if (stringsSet.LoginFailed != null)
+            {
+                LoginFailed = stringsSet.LoginFailed;
+            }
+
+            if (stringsSet.LoginSuccessful != null)
+            {
+                LoginSuccessful = stringsSet.LoginSuccessful;
+            }
+
+            if (stringsSet.LoginStillValid != null)
+            {
+                LoginStillValid = stringsSet.LoginStillValid;
+            }
         }
     }
 
@@ -228,6 +284,7 @@
         {
             FirstStart = "다운로드를 시작하려면 압축이 풀린 트위터 아카이브 폴더를 여기에 끌어다 놓아주세요.";
             QuitWhileDLing = "다운로드가 진행중입니다. 다운로드를 중단하고 종료해도 괜찮으신가요?";
+            QuitIfLoggedIn = "현재 이 컴퓨터에 트위터로 로그인이 되어있습니다. 지금 로그아웃 하실래요?";
             QuitMe = "트윗 미디어 아카이버 끝내기";
             ReleaseMouseHere = "좋습니다! 시작하려면 마우스 버튼을 놓아주세요.";
             NowDLing = "트위터 아카이브를 분석하여 미디어를 다운로드하고 있습니다. 이 작업은 쓰신 트윗 갯수, 컴퓨터 성능 및 인터넷 속도에 따라 수 분에서 수십 분 걸립니다.";
@@ -253,6 +310,13 @@
             OptionDesc = "아래의 선택사항은 다운로드 중에는 변경하실 수 없습니다.";
             OptionExcludeRetweets = "리트윗 제외";
             OptionExcludeRetweetsDesc = "체크하면 리트윗한 트윗의 프로필 사진과 미디어를 다운로드 하지 않습니다. 나중에 계정이\n프로텍트 상태가되거나 트윗이 삭제되어 버렸을 때 더 이상 다운로드하지 못할 수 있습니다.";
+            OptionLogin = "프로텍트 계정 미디어 다운로드";
+            OptionLoginDesc = "아카이브 주인 또는 트윗 작성자가 프로텍트 계정이면 동영상을 다운로드할 때 로그인이 필요합니다.\n체크박스를 클릭하시면 로그인 또는 로그아웃 창이 나타납니다.\n(로그인 된 계정이 미디어 게시자를 팔로우 하고 있는 경우에만 다운로드 가능)";
+            WindowLoginDesc = "아래 화면에서 트위터에 아카이브를 만들었던 계정으로 로그인하신 다음, 로그인에 성공해 타임라인이 표시되면 창을 닫아주세요.";
+            WindowLogoutDesc = "아래 화면에서 로그아웃 버튼을 눌러주세요. 로그아웃에 성공하면 창을 닫아주세요.";
+            LoginFailed = "로그인 정보를 가져오지 못했습니다.\n프로텍트 계정의 미디어를 가져올 수 없습니다.";
+            LoginSuccessful = "로그인 정보를 가져왔습니다.\n이제 프로텍트 계정의 미디어도 가져올 수 있습니다.";
+            LoginStillValid = "로그인이 아직 유효합니다.\n이 컴퓨터의 IE 브라우저에서 트위터 접속시 로그인이 유지될 수 있습니다.\n트위터를 로그아웃 하실거라면 체크박스를 클릭해 다시 시도해주세요.";
         }
     }
 
@@ -262,6 +326,7 @@
         {
             FirstStart = "ダウンロードを始めるなら圧縮解除されたツイーターアーカイブのフォルダをここに引いておくてください。";
             QuitWhileDLing = "ダウンロード中です。ダウンロードを中断して、終了してもいいですか？";
+            QuitIfLoggedIn = "このパソコンにツイーターにログインされています。今ログアウトしますか？";
             QuitMe = "ツイートメディアアーカイバー終了";
             ReleaseMouseHere = "よし！始めるならマウスのボタンを放してください。";
             NowDLing = "ツイーターアーカイブを読みながらメディアをダウンロードしています。この作業はツイートの数、お使いパソコンのスペックやネットのスピードによって数分から数十分くらい手間取ります。";
@@ -287,6 +352,13 @@
             OptionDesc = "下のオップションはダウンロード中には変えることができません。";
             OptionExcludeRetweets = "リツイートは抜きにする";
             OptionExcludeRetweetsDesc = "チェックしたら、リツイートのプロフィール写真やメディアをダウンロードしません。後でツイートが\n非公開になるとか削除された場合、もうダウンロードできないようになるかもしれません。";
+            OptionLogin = "非公開アカウントのメディアをダウンロードする";
+            OptionLoginDesc = "アーカイブの元主やあるツイートが非公開アカウントなら、動画をダウンロードするためログインしてください\nチェックボックスをクリックするとログインやログアウト画面がでてきます。\n（ログインしたアカウントがメディアの掲示者をフォローしてこそダウンロードが可能）";
+            WindowLoginDesc = "下の画面でツイーターからアーカイブをもらったアカウントでログインしてください。成功しTLが表示されたら、この画面を閉じてください。";
+            WindowLogoutDesc = "下の画面でログアウトをクリックしてください。ログアウトできたら画面を閉じてください。";
+            LoginFailed = "ログイン情報をもらえできませんでした。\n非公開アカウントのメディアをダウンロードができません。";
+            LoginSuccessful = "ログイン情報をもらえました。\n非公開アカウントのメディアもダウンロードができます。";
+            LoginStillValid = "ログインがまた有効です。\nこのパソコンのブラウザIEからツイッターに訪問の際にログインが維持されることがたまたまあります。\nツイーターをログアウトしたいなら、チェックボックスをもう一度クリックして再び試みてください。";
         }
     }
 }

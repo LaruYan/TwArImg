@@ -10,7 +10,7 @@ namespace TwArImg_GUI
 {
     public partial class MainForm : Form
     {
-        public const string VERSION_STRING = "v0.8b-unreleased";
+        public const string VERSION_STRING = "v0.9";
         ///////////////////////////////////////////////////////////////////////
         // UI
 
@@ -91,16 +91,17 @@ namespace TwArImg_GUI
                 integrity = 1;
             }
 
+            //이제 Newtonsoft.Json.dll은 exe에 포함되어 배포됩니다.
             //checksum of Newtonsoft.Json.dll
             //CRC - 32: da220ecc
             //     MD4: 339614eec6c2e5a017e27d249b2e07d9
             //     MD5: c53737821b861d454d5248034c3c097c
             // SHA - 1: 6b0da75617a2269493dc1a685d7a0b07f2e48c75
             // SHA-256: 575E30F98E4EA42C9E516EDC8BBB29AD8B50B173A3E6B36B5BA39E133CCE9406
-            if ( ! "575E30F98E4EA42C9E516EDC8BBB29AD8B50B173A3E6B36B5BA39E133CCE9406".Equals(checksumSHA1("Newtonsoft.Json.dll")))
-            {
-                return -1;// 치명적
-            }
+            //if ( ! "575E30F98E4EA42C9E516EDC8BBB29AD8B50B173A3E6B36B5BA39E133CCE9406".Equals(checksumSHA1("Newtonsoft.Json.dll")))
+            //{
+            //    return -1;// 치명적
+            //}
 
             return integrity;
         }
@@ -137,7 +138,7 @@ namespace TwArImg_GUI
             m_strings.setLanguage(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName);
 
             // 다운로더를 초기화합니다.
-            m_dler = new TwArImg_GUI.Downloader();
+            m_dler = Downloader.getInstance();
 
             // 모든것은 파일의 무결성을 검사하는 데에서 시작합니다.
             switch (checkFiles())
@@ -166,7 +167,7 @@ namespace TwArImg_GUI
 
             //////////////////////////////////////////////////////
             // UI 초기화
-            http://www.codeproject.com/Articles/65185/Windows-Taskbar-C-Quick-Reference
+            // http://www.codeproject.com/Articles/65185/Windows-Taskbar-C-Quick-Reference
             //TaskbarManager.Instance.ApplicationId = "TaskbarManaged";
 
             if (false) { 
@@ -225,6 +226,9 @@ namespace TwArImg_GUI
             ckb_Option_ExcludeRetweets.Text = m_strings.OptionExcludeRetweets;
             lbl_Option_ExcludeRetweets.Text = m_strings.OptionExcludeRetweetsDesc;
 
+            ckb_Option_Login.Text = m_strings.OptionLogin;
+            lbl_Option_Login.Text = m_strings.OptionLoginDesc;
+
             //정보
             lbl_AboutVersion.Text = m_strings.AppName + " " + VERSION_STRING;
 
@@ -274,6 +278,7 @@ namespace TwArImg_GUI
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            bool isForceExit = false;
             // 내려받기 중인 경우, 폼을 닫기 전 사용자의 확인을 구해야합니다.
             if (m_dler.IsInOperation)
             {
@@ -282,13 +287,44 @@ namespace TwArImg_GUI
                 {
                     // 예 버튼을 눌렀습니다. 종료를 허락합니다.
                     e.Cancel = false;
-                    Application.Exit();
+                    isForceExit = true;
                 }
                 else
                 {
                     // 아니오 버튼을 눌렀습니다. 아무것도 하지 않습니다.
                     e.Cancel = true;
                 }
+            }
+
+            bool dontWantLogout = false;
+            bool wantLogout = false;
+            while (!dontWantLogout)
+            {
+                if (m_dler.isWebTokenValid)
+                {
+                    // 웹토큰이 유효합니다.
+                    if (wantLogout || DialogResult.Yes == MessageBox.Show(m_strings.QuitIfLoggedIn, m_strings.QuitMe, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                    {
+                        //로그아웃을 원합니다. 로그아웃을 수행합니다.
+                        // OR 연산자는 왼쪽부터 순서대로 수행하다 조건이 true면 다음 조건은 검사하지 않고 내려옵니다.
+                        wantLogout = true;
+                        logout();
+                    }
+                    else
+                    {
+                        //로그아웃을 원하지 않습니다.
+                        dontWantLogout = true;
+                    }
+                }
+                else
+                {
+                    dontWantLogout = true;
+                }
+            }
+
+            if (isForceExit)
+            {
+                Application.Exit();
             }
         }
 
@@ -567,6 +603,45 @@ namespace TwArImg_GUI
         {
             ckb_Option_ExcludeRetweets.Enabled = !isLocked;
             lbl_Option_ExcludeRetweets.Enabled = !isLocked;
+            ckb_Option_Login.Enabled = !isLocked;
+            lbl_Option_Login.Enabled = !isLocked;
+        }
+
+        private void ckb_Option_Login_CheckedChanged(object sender, EventArgs e)
+        {
+            // 체크상태의 변화 리스너
+            // 클릭할 때 처리해야 하므로 여기선 할 일이 없다.
+        }
+
+        private void logout()
+        {
+            //로그아웃
+            TwitterWeb twtWeb = new TwitterWeb(false, m_strings);
+            twtWeb.ShowDialog(); //모달로 출력
+            ckb_Option_Login.Checked = m_dler.isWebTokenValid;
+        }
+        
+        private void login()
+        {
+            TwitterWeb twtWeb = new TwitterWeb(true, m_strings);
+            twtWeb.ShowDialog(); //모달로 출력
+                                 // 아래는 ShowDialog로 연 창이 닫힌 이후에 처리됨
+            ckb_Option_Login.Checked = m_dler.isWebTokenValid;
+        }
+
+        private void ckb_Option_Login_Click(object sender, EventArgs e)
+        {
+            // 클릭 여부 리스너
+            if (ckb_Option_Login.Checked)
+            {
+                // 로그인 필요
+                login();
+            }
+            else
+            {
+                // 로그아웃 필요
+                logout();
+            }
         }
     }
 }
