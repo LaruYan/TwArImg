@@ -710,6 +710,30 @@
   <data name="&gt;&gt;tabPage_Log.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnWeb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>905, 263</value>
+  </data>
+  <data name="btnWeb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 43</value>
+  </data>
+  <data name="btnWeb.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnWeb.Text" xml:space="preserve">
+    <value>webButton</value>
+  </data>
+  <data name="&gt;&gt;btnWeb.Name" xml:space="preserve">
+    <value>btnWeb</value>
+  </data>
+  <data name="&gt;&gt;btnWeb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWeb.Parent" xml:space="preserve">
+    <value>tabPage_option</value>
+  </data>
+  <data name="&gt;&gt;btnWeb.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lbl_Option_Login.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -736,7 +760,7 @@
     <value>tabPage_option</value>
   </data>
   <data name="&gt;&gt;lbl_Option_Login.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ckb_Option_Login.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -763,7 +787,7 @@
     <value>tabPage_option</value>
   </data>
   <data name="&gt;&gt;ckb_Option_Login.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lbl_Option_Description.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -793,7 +817,7 @@
     <value>tabPage_option</value>
   </data>
   <data name="&gt;&gt;lbl_Option_Description.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lbl_Option_ExcludeRetweets.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -824,7 +848,7 @@
     <value>tabPage_option</value>
   </data>
   <data name="&gt;&gt;lbl_Option_ExcludeRetweets.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ckb_Option_ExcludeRetweets.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -854,7 +878,7 @@
     <value>tabPage_option</value>
   </data>
   <data name="&gt;&gt;ckb_Option_ExcludeRetweets.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tabPage_option.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 39</value>

@@ -62,6 +62,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sfd_Log = new System.Windows.Forms.SaveFileDialog();
             this.timer_LogRefresh = new System.Windows.Forms.Timer(this.components);
+            this.btnWeb = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Guide)).BeginInit();
             this.tabCtrl_Status.SuspendLayout();
@@ -205,6 +206,7 @@
             // 
             // tabPage_option
             // 
+            this.tabPage_option.Controls.Add(this.btnWeb);
             this.tabPage_option.Controls.Add(this.lbl_Option_Login);
             this.tabPage_option.Controls.Add(this.ckb_Option_Login);
             this.tabPage_option.Controls.Add(this.lbl_Option_Description);
@@ -302,6 +304,13 @@
             // 
             this.timer_LogRefresh.Interval = 1000;
             // 
+            // btnWeb
+            // 
+            resources.ApplyResources(this.btnWeb, "btnWeb");
+            this.btnWeb.Name = "btnWeb";
+            this.btnWeb.UseVisualStyleBackColor = true;
+            this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -365,6 +374,7 @@
         private System.Windows.Forms.Label lbl_Option_Description;
         private System.Windows.Forms.CheckBox ckb_Option_Login;
         private System.Windows.Forms.Label lbl_Option_Login;
+        private System.Windows.Forms.Button btnWeb;
     }
 }
 

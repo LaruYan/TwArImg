@@ -643,5 +643,13 @@ namespace TwArImg_GUI
                 logout();
             }
         }
+
+        private void btnWeb_Click(object sender, EventArgs e)
+        {
+            //기능 시험용
+            StatusWeb stWeb = new StatusWeb();
+
+            stWeb.Show();
+        }
     }
 }
