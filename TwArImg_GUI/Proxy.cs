@@ -60,6 +60,7 @@ namespace TwArImg_GUI
                 }
             };
             proxyServer.ForwardToUpstreamGateway = true;
+
             proxyServer.CertificateManager.SaveFakeCertificates = true;
 
             // optionally set the Certificate Engine
@@ -70,17 +71,18 @@ namespace TwArImg_GUI
             //proxyServer.CertificateManager.RootCertificate = new X509Certificate2("myCert.pfx", string.Empty, X509KeyStorageFlags.Exportable);
         }
 
-        public void StartProxy()
+        public List<ProxyEndPoint> StartProxy()
         {
+            // 2018-08-19 19:20 응답 변조 필요 없음
             proxyServer.BeforeRequest += OnRequest;
-            proxyServer.BeforeResponse += OnResponse;
+            //proxyServer.BeforeResponse += OnResponse;
 
             proxyServer.ServerCertificateValidationCallback += OnCertificateValidation;
             proxyServer.ClientCertificateSelectionCallback += OnCertificateSelection;
 
             //proxyServer.EnableWinAuth = true;
 
-            explicitEndPoint = new ExplicitProxyEndPoint(IPAddress.Any, 8000);
+            explicitEndPoint = new ExplicitProxyEndPoint(IPAddress.Any, 80); // 8000에서 인터넷 설정 LAN 설정 프록시 기본값인 80 포트로 수정함
 
             // Fired when a CONNECT request is received
             explicitEndPoint.BeforeTunnelConnectRequest += OnBeforeTunnelConnectRequest;
@@ -105,30 +107,34 @@ namespace TwArImg_GUI
             //proxyServer.UpStreamHttpProxy = new ExternalProxy() { HostName = "localhost", Port = 8888 };
             //proxyServer.UpStreamHttpsProxy = new ExternalProxy() { HostName = "localhost", Port = 8888 };
 
-            foreach (var endPoint in proxyServer.ProxyEndPoints)
-            {
-                Console.WriteLine("Listening on '{0}' endpoint at Ip {1} and port: {2} ", endPoint.GetType().Name,
-                    endPoint.IpAddress, endPoint.Port);
-            }
+            //foreach (var endPoint in proxyServer.ProxyEndPoints)
+            //{
+            //    Console.WriteLine("Listening on '{0}' endpoint at Ip {1} and port: {2} ", endPoint.GetType().Name,
+            //        endPoint.IpAddress, endPoint.Port);
+            //}
 
-#if NETSTANDARD2_0
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-#endif
-            {
-                // Only explicit proxies can be set as system proxy!
-                //proxyServer.SetAsSystemHttpProxy(explicitEndPoint);
-                //proxyServer.SetAsSystemHttpsProxy(explicitEndPoint);
-                proxyServer.SetAsSystemProxy(explicitEndPoint, ProxyProtocolType.AllHttp);
-            }
+            //2018-08-19 20:38 사용 안 함: 시스템 단위 프록시일 필요는 없다
+            //#if NETSTANDARD2_0
+            //            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            //#endif
+            //            {
+            //                // Only explicit proxies can be set as system proxy!
+            //                //proxyServer.SetAsSystemHttpProxy(explicitEndPoint);
+            //                //proxyServer.SetAsSystemHttpsProxy(explicitEndPoint);
+            //                proxyServer.SetAsSystemProxy(explicitEndPoint, ProxyProtocolType.AllHttp);
+            //            }
+
+            // 2018-08-19 20:42 StatusWeb단에서 처리하기 위해서 그냥 넘겨준다.
+            return proxyServer.ProxyEndPoints;
         }
 
         public void Stop()
         {
-            explicitEndPoint.BeforeTunnelConnectRequest -= OnBeforeTunnelConnectRequest;
+            //explicitEndPoint.BeforeTunnelConnectRequest -= OnBeforeTunnelConnectRequest;
             explicitEndPoint.BeforeTunnelConnectResponse -= OnBeforeTunnelConnectResponse;
 
             proxyServer.BeforeRequest -= OnRequest;
-            proxyServer.BeforeResponse -= OnResponse;
+            //proxyServer.BeforeResponse -= OnResponse;
             proxyServer.ServerCertificateValidationCallback -= OnCertificateValidation;
             proxyServer.ClientCertificateSelectionCallback -= OnCertificateSelection;
 
@@ -143,13 +149,15 @@ namespace TwArImg_GUI
             string hostname = e.WebSession.Request.RequestUri.Host;
             await WriteToConsole("Tunnel to: " + hostname);
 
-            if (hostname.Contains("dropbox.com"))
-            {
-                // Exclude Https addresses you don't want to proxy
-                // Useful for clients that use certificate pinning
-                // for example dropbox.com
-                e.DecryptSsl = false;
-            }
+
+            // 트위터는 인증서 고정 사용 안 함
+            //if (hostname.Contains("dropbox.com"))
+            //{
+            //    // Exclude Https addresses you don't want to proxy
+            //    // Useful for clients that use certificate pinning
+            //    // for example dropbox.com
+            //    e.DecryptSsl = false;
+            //}
         }
 
         private Task OnBeforeTunnelConnectResponse(object sender, TunnelConnectSessionEventArgs e)
@@ -189,71 +197,73 @@ namespace TwArImg_GUI
             //          "<p>Blocked by titanium web proxy.</p>" +
             //          "</body>" +
             //          "</html>");
-            //} 
+            //}
 
-            ////Redirect example
-            //if (e.WebSession.Request.RequestUri.AbsoluteUri.Contains("wikipedia.org"))
-            //{ 
-            //   e.Redirect("https://www.paypal.com");
-            //} 
+                ////Redirect example
+                //if (e.WebSession.Request.RequestUri.AbsoluteUri.Contains("wikipedia.org"))
+                //{ 
+                //   e.Redirect("https://www.paypal.com");
+                //} 
         }
 
+        // 2018-08-19 18:32 multipart 응답 수정 사용 안 함
         // Modify response
-        private async Task MultipartRequestPartSent(object sender, MultipartRequestPartSentEventArgs e)
-        {
-            var session = (SessionEventArgs)sender;
-            await WriteToConsole("Multipart form data headers:");
-            foreach (var header in e.Headers)
-            {
-                await WriteToConsole(header.ToString());
-            }
-        }
+        //private async Task MultipartRequestPartSent(object sender, MultipartRequestPartSentEventArgs e)
+        //{
+        //    var session = (SessionEventArgs)sender;
+        //    await WriteToConsole("Multipart form data headers:");
+        //    foreach (var header in e.Headers)
+        //    {
+        //        await WriteToConsole(header.ToString());
+        //    }
+        //}
 
-        private async Task OnResponse(object sender, SessionEventArgs e)
-        {
-            await WriteToConsole("Active Server Connections:" + ((ProxyServer)sender).ServerConnectionCount);
+        // 2018-08-19 18:33 응답 이벤트 사용 안 함     
+        //private async Task OnResponse(object sender, SessionEventArgs e)
+        //{
+        //    await WriteToConsole("Active Server Connections:" + ((ProxyServer)sender).ServerConnectionCount);
 
-            string ext = System.IO.Path.GetExtension(e.WebSession.Request.RequestUri.AbsolutePath);
+        //    string ext = System.IO.Path.GetExtension(e.WebSession.Request.RequestUri.AbsolutePath);
 
-            //access user data set in request to do something with it
-            //var userData = e.WebSession.UserData as CustomUserData;
+        //    //access user data set in request to do something with it
+        //    //var userData = e.WebSession.UserData as CustomUserData;
 
-            //if (ext == ".gif" || ext == ".png" || ext == ".jpg")
-            //{ 
-            //    byte[] btBody = Encoding.UTF8.GetBytes("<!DOCTYPE html>" +
-            //                                           "<html><body><h1>" +
-            //                                           "Image is blocked" +
-            //                                           "</h1>" +
-            //                                           "<p>Blocked by Titanium</p>" +
-            //                                           "</body>" +
-            //                                           "</html>");
+        //    //if (ext == ".gif" || ext == ".png" || ext == ".jpg")
+        //    //{ 
+        //    //    byte[] btBody = Encoding.UTF8.GetBytes("<!DOCTYPE html>" +
+        //    //                                           "<html><body><h1>" +
+        //    //                                           "Image is blocked" +
+        //    //                                           "</h1>" +
+        //    //                                           "<p>Blocked by Titanium</p>" +
+        //    //                                           "</body>" +
+        //    //                                           "</html>");
 
-            //    var response = new OkResponse(btBody);
-            //    response.HttpVersion = e.WebSession.Request.HttpVersion;
+        //    //    var response = new OkResponse(btBody);
+        //    //    response.HttpVersion = e.WebSession.Request.HttpVersion;
 
-            //    e.Respond(response);
-            //    e.TerminateServerConnection();
-            //} 
+        //    //    e.Respond(response);
+        //    //    e.TerminateServerConnection();
+        //    //} 
 
-            //// print out process id of current session
-            ////WriteToConsole($"PID: {e.WebSession.ProcessId.Value}");
+        //    //// print out process id of current session
+        //    ////WriteToConsole($"PID: {e.WebSession.ProcessId.Value}");
 
-            ////if (!e.ProxySession.Request.Host.Equals("medeczane.sgk.gov.tr")) return;
-            //if (e.WebSession.Request.Method == "GET" || e.WebSession.Request.Method == "POST")
-            //{ 
-            //    if (e.WebSession.Response.StatusCode == (int)HttpStatusCode.OK)
-            //    {
-            //        if (e.WebSession.Response.ContentType != null && e.WebSession.Response.ContentType.Trim().ToLower().Contains("text/html"))
-            //        {
-            //            var bodyBytes = await e.GetResponseBody();
-            //            await e.SetResponseBody(bodyBytes);
+        //    ////if (!e.ProxySession.Request.Host.Equals("medeczane.sgk.gov.tr")) return;
+        //    //if (e.WebSession.Request.Method == "GET" || e.WebSession.Request.Method == "POST")
+        //    //{ 
+        //    //    if (e.WebSession.Response.StatusCode == (int)HttpStatusCode.OK)
+        //    //    {
+        //    //        if (e.WebSession.Response.ContentType != null && e.WebSession.Response.ContentType.Trim().ToLower().Contains("text/html"))
+        //    //        {
+        //    //            var bodyBytes = await e.GetResponseBody();
+        //    //            await e.SetResponseBody(bodyBytes);
 
-            //            string body = await e.GetResponseBodyAsString();
-            //            await e.SetResponseBodyString(body);
-            //        }
-            //    }
-            //} 
-        }
+        //    //            string body = await e.GetResponseBodyAsString();
+        //    //            await e.SetResponseBodyString(body);
+        //    //        }
+        //    //    }
+        //    //} 
+        //}
 
         /// <summary>
         ///     Allows overriding default certificate validation logic

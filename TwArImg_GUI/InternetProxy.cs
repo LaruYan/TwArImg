@@ -58,37 +58,38 @@ namespace CSWebBrowserWithProxy
             UserName = string.Empty
         };
 
-        static List<InternetProxy> proxyList = null;
-        public static List<InternetProxy> ProxyList
-        {
-            get
-            {
-                // Gets the proxy servers in ProxyList.xml.
-                if (proxyList == null)
-                {
-                    proxyList = new List<InternetProxy>();
-                    try
-                    {
-                        XElement listXml = XElement.Load("ProxyList.xml");
-                        foreach (var proxy in listXml.Elements("Proxy"))
-                        {
-                            proxyList.Add(
-                                new InternetProxy
-                                {
-                                    ProxyName = proxy.Element("ProxyName").Value,
-                                    Address = proxy.Element("Address").Value,
-                                    UserName = proxy.Element("UserName").Value,
-                                    Password = proxy.Element("Password").Value
-                                });
-                        }
-                    }
-                    catch (System.Exception)
-                    {
-                    }
-                }
-                return proxyList;
-            }
-        }
+        // 2018-08-19 20:57 사용 안 함 : 고정된 리소스로부터 가져올 필요 없음
+        //static List<InternetProxy> proxyList = null;
+        //public static List<InternetProxy> ProxyList
+        //{
+        //    get
+        //    {
+        //        // Gets the proxy servers in ProxyList.xml.
+        //        if (proxyList == null)
+        //        {
+        //            proxyList = new List<InternetProxy>();
+        //            try
+        //            {
+        //                XElement listXml = XElement.Load("ProxyList.xml");
+        //                foreach (var proxy in listXml.Elements("Proxy"))
+        //                {
+        //                    proxyList.Add(
+        //                        new InternetProxy
+        //                        {
+        //                            ProxyName = proxy.Element("ProxyName").Value,
+        //                            Address = proxy.Element("Address").Value,
+        //                            UserName = proxy.Element("UserName").Value,
+        //                            Password = proxy.Element("Password").Value
+        //                        });
+        //                }
+        //            }
+        //            catch (System.Exception)
+        //            {
+        //            }
+        //        }
+        //        return proxyList;
+        //    }
+        //}
     }
 }
 
