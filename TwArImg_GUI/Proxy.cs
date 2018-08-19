@@ -82,7 +82,7 @@ namespace TwArImg_GUI
 
             //proxyServer.EnableWinAuth = true;
 
-            explicitEndPoint = new ExplicitProxyEndPoint(IPAddress.Any, 80); // 8000에서 인터넷 설정 LAN 설정 프록시 기본값인 80 포트로 수정함
+            explicitEndPoint = new ExplicitProxyEndPoint(IPAddress.Any, 8000); // 8000에서 인터넷 설정 LAN 설정 프록시 기본값인 80 포트로 수정함
 
             // Fired when a CONNECT request is received
             explicitEndPoint.BeforeTunnelConnectRequest += OnBeforeTunnelConnectRequest;

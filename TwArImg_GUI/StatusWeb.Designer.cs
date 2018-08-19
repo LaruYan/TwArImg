@@ -30,7 +30,7 @@ namespace TwArImg_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowser = new WebBrowserWithProxy();
+            this.webBrowser = new CefSharp.WinForms.ChromiumWebBrowser();
             this.SuspendLayout();
             // 
             // webBrowser
@@ -57,6 +57,7 @@ namespace TwArImg_GUI
 
         #endregion
 
-        private WebBrowserWithProxy webBrowser;
+        // Designer 에서 다룰 때 예외가 발생하며 Visual Studio를 강제종료시킬 수 있습니다.
+        private CefSharp.WinForms.ChromiumWebBrowser webBrowser;
     }
 }
