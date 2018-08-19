@@ -225,6 +225,9 @@ namespace TwArImg_GUI
 
         //    string ext = System.IO.Path.GetExtension(e.WebSession.Request.RequestUri.AbsolutePath);
 
+        //    // 응답 이벤트 사용하면 XHR이 잡히는지 확인용
+        //    await WriteToConsole(e.WebSession.Request.RequestUri.AbsolutePath);
+        //    await WriteToConsole("extension is " + ext);
         //    //access user data set in request to do something with it
         //    //var userData = e.WebSession.UserData as CustomUserData;
 
